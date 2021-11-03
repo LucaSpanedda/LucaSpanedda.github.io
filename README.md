@@ -1,7 +1,7 @@
 # Luca Spanedda 
 
-these are my social links:
-### [Academia](https://conservatoriosantacecilia.academia.edu/LucaSpanedda)
+*these are my social links:*
+### [*Academia*](https://conservatoriosantacecilia.academia.edu/LucaSpanedda)
 ### [*Github*](https://github.com/LucaSpanedda/)
 ### [*Blog*](https://iosonosuono.blogspot.com/)
 ### [*Soundcloud*](https://soundcloud.com/luca-spanedda-1995)
