@@ -1,10 +1,16 @@
 # Luca Spanedda 
 
-Welcome to my personal website.
+*Welcome to my personal website.*
 
-Here you can find my [VST PLUGINS](https://github.com/LucaSpanedda/Plugin-VST/tree/main/The_Elegant_Universe_1.0#the_elegant_universe_)
 
-And here you can offer me a coffe for the work [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/LucaSpanedda)
+Here you can find my 
+
+### [VST PLUGINS](https://github.com/LucaSpanedda/Plugin-VST/tree/main/The_Elegant_Universe_1.0#the_elegant_universe_)
+
+And here you can offer me a coffe for the work 
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/LucaSpanedda)
+
 
 *these are my social links:*
 ### [*Academia*](https://conservatoriosantacecilia.academia.edu/LucaSpanedda)
