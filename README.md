@@ -1,3 +1,32 @@
+<!-- start the html page -->
+<html>
+<!-- head of the code -->
+<head>
+<!-- MAIN FONT for the page -->
+<style>body 
+{font-family: 'Lucida Console', monospace;}
+</style>
+</head>
+<!-- MAIN COLOR for the PAGE -->
+<body style="background-color:black;">
+<!-- MAIN COLOR for the TEXT -->
+<body text="white">
+
+<h1>Luca Spanedda</h1>
+<h2>HTML Image</h2>
+<img src="pic_trulli.jpg" alt="Trulli" width="500" height="333">
+<p>  Luca Spanedda is an Electroacoustic Composer. 
+<br> Born in Rome on 15th February 1995.
+<br> Welcome to my personal website</p>
+
+<!-- end of the BODY (COLOR) -->
+</body>
+<!-- end the html page -->
+</html>
+
+
+
+
 # Luca Spanedda 
 
 *Welcome to my personal website.*
@@ -25,7 +54,6 @@ Here you can find my
 And here you can offer me a coffe for the work 
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/LucaSpanedda)
-
 
 <!---
 [<img src="https://github.com/LucaSpanedda/LucaSpanedda.github.io/blob/main/images/bclogo.png" width="60" height="60">](https://www.instagram.com/luca_spanedda/?hl=it)
