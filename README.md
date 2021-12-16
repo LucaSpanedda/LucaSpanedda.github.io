@@ -13,8 +13,6 @@
 <body text="white">
 
 <h1>Luca Spanedda</h1>
-<h2>HTML Image</h2>
-<img src="pic_trulli.jpg" alt="Trulli" width="500" height="333">
 <p>  Luca Spanedda is an Electroacoustic Composer. 
 <br> Born in Rome on 15th February 1995.
 <br> Welcome to my personal website</p>
