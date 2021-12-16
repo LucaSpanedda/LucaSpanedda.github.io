@@ -3,9 +3,6 @@
 <!-- head of the code -->
 <head>
 <!-- MAIN FONT for the page -->
-<style>body 
-{font-family: 'Lucida Console', monospace;}
-</style>
 </head>
 <!-- MAIN COLOR for the PAGE -->
 <body style="background-color:black;">
@@ -53,6 +50,7 @@ And here you can offer me a coffe for the work
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/LucaSpanedda)
 
+  
 <!---
 [<img src="https://github.com/LucaSpanedda/LucaSpanedda.github.io/blob/main/images/bclogo.png" width="60" height="60">](https://www.instagram.com/luca_spanedda/?hl=it)
 -->
