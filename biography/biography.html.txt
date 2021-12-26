@@ -1,0 +1,74 @@
+<!-- start the html page -->
+<html>
+  <!-- head of the code -->
+  <head>
+  </head>
+  <!-- MAIN FONT for the page -->
+  <style>body 
+    {font-family: 'Lucida Console', monospace;}
+    
+    
+  </style>
+  
+  <!-- BUTTON FOR LINKS -->
+  <style>
+  a:link, a:visited {
+  background-color: white;
+  color: black;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: LightGray;
+}
+
+.center {
+  text-align: center;
+  border: 2px solid white;
+}
+
+</style>
+
+    
+  <!-- MAIN COLOR for the PAGE -->
+  <body style="background-color:black;">
+    <!-- MAIN COLOR for the TEXT -->
+    <body text="white">
+
+<div class="center">
+
+<h1>Biography</h1><br><br>
+Luca Spanedda was born in Rome on 15th February 1995. <br>
+Since when he was a child has developed an extreme fascination for music. <br>
+He experienced as disk jockey of some jungle collectives in Rome, <br>
+produced and published some LPs and he wrote a piece of music for the RAI film "Aquadro". <br>
+He graduated in economics, finance and marketing in 2015, <br>
+consequently beginning his academic program in electronic music at the Santa Cecilia Conservatory of Rome, <br>
+as a student of electroacoustic composition with the masters Michelangelo Lupone and Nicola Bernardini. <br>
+In 2017 he presented "Asteroidi" an audio-visual work, <br>
+with the multimedia composition class of M. Riccardo Santoboni 
+at the Master in Sonic Arts <br>
+(University of Rome Tor Vergata) <br>
+and at the Academic Hall of the Conservatory Santa Cecilia. <br>
+In 2021, he performed in concert the electronic part <br>
+of the Post-prae-ludium n. 1 for Donau by Luigi Nono, <br>
+at the Goethe-Institut Italien in Rome, ArteScienza festival. <br>
+Also in 2021 he performs live the LP released by Mossa Records <br>
+(independent Roman electronic music label),
+at the Klang club in Rome, <br>
+and writes a song for Giovanni La Gorga's film: From My House In Da House. <br>
+He is now enrolled in the last two-year course (Biennio) <br>
+of Electronic Music at the Conservatory Santa Cecilia in Rome.
+<br>
+<br>
+</div>
+  
+      
+        
+  <!-- end of the BODY (COLOR) -->
+  </body>
+  <!-- end the html page -->
+  </html>
