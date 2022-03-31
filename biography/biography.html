@@ -1,26 +1,29 @@
 <!-- head of the code -->
+<html>
 <head>
-</head>
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
   <!-- MAIN FONT for the page -->
-    <style>
     body {background-image: url('background_1.jpg');}
     body {font-family: 'Lucida Console', monospace;}
-  </style>
-  
-  <!-- BUTTON FOR LINKS -->
-  <style>
-  a:link, a:visited {
-  background-color: white;
-  color: black;
-  font-size: 20px;
-  padding: 2px 2px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px 2px;
-  cursor: pointer;
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 
@@ -30,12 +33,12 @@ a:hover, a:active {
 
 .center {
   text-align: center;
-  border: 1px solid white;
 }
+</style>
+</head>
+<body>
 
 </style>
-
-    
   <!-- MAIN COLOR for the PAGE -->
   <body style="background-color:black;">
     <!-- MAIN COLOR for the TEXT -->
@@ -46,39 +49,80 @@ a:hover, a:active {
 <h1><i>Biography</i></h1>
 <br><br>
 </div>
-Luca Spanedda is a Composer and Musician. <br>
-Was born in Rome on 15th February 1995. <br>
-His musical attention passes from cybernetics to technologies, <br> 
-and from sound and human spaces to social criticism. <br>
-He started making music as a teenager, <br>
-doing the dj and the producer in some drum & bass collectives in Rome(IT), <br>
-and publishing some LPs. <br>
-He wrote some pieces of music for films: <br> 
-the RAI film "Aquadro" - 2013, <br>
-From My House In Da House a Giovanni La Gorga's film - 2021. <br>
-He graduated in economics, finance and marketing in 2015, <br>
-consequently beginning his academic program in electronic music <br>
-at the Santa Cecilia Conservatory of Rome, <br>
-as a student of electroacoustic composition with the masters: <br>
-Michelangelo Lupone and Nicola Bernardini. <br>
-In 2017 he presented "Asteroidi" an audio-visual work, <br>
-with the multimedia composition class of M. Riccardo Santoboni 
-at the Master in Sonic Arts <br>
-(University of Rome Tor Vergata) <br>
-and at the Academic Hall of the Conservatory Santa Cecilia. <br>
-In 2021, he performed in concert the electronic part <br>
-of the Post-prae-ludium n. 1 for Donau by Luigi Nono, <br>
-at the Goethe-Institut Italien in Rome, ArteScienza festival. <br>
-And also in 2021 he performs live the LP released by Mossa Records <br>
-(independent Roman electronic music label), <br>
-at the Klang club in Rome, <br>
-He is now enrolled in the last two-year course (Biennio) <br>
-of Electronic Music at the Conservatory Santa Cecilia in Rome.
-<br>
-<br>
 
+<div class="row">
+  <div class="column">
+    <h2>BIO (ENG)</h2>
+    <p>
+Luca Spanedda is a Composer and Musician. 
+Was born in Rome on 15th February 1995.
+His musical attention passes from cybernetics to technologies, 
+and from sound and human spaces to social criticism. 
+He started making music as a teenager,
+doing the dj and the producer in some Drum and Bass collectives in Rome(IT), <br>
+and publishing some LPs.
+He wrote some pieces of music for films: 
+the RAI film "Aquadro" - 2013,
+From My House In Da House a Giovanni La Gorga's film - 2021.
+He graduated in economics, finance and marketing in 2015,
+consequently beginning his academic program in electronic music
+at the Santa Cecilia Conservatory of Rome,
+as a student of electroacoustic composition with the masters:
+Michelangelo Lupone and Nicola Bernardini.
+In 2017 he presented "Asteroidi" an audio-visual work,
+with the multimedia composition class of M. Riccardo Santoboni 
+at the Master in Sonic Arts
+(University of Rome Tor Vergata)
+and at the Academic Hall of the Conservatory Santa Cecilia.
+In 2021, he performed in concert the electronic part 
+of the Post-prae-ludium n. 1 for Donau by Luigi Nono, 
+at the Goethe-Institut Italien in Rome, ArteScienza festival. 
+And also in 2021 he performs live the LP released by Mossa Records 
+(independent Roman electronic music label), 
+at the Klang club in Rome, 
+He is now enrolled in the last two-year course (Biennio) 
+of Electronic Music at the Conservatory Santa Cecilia in Rome.
+  </p>
+  </div>
   
+  <div class="column">
+    <h2>BIO (ITA)</h2>
+    <p>
+Luca Spanedda è un compositore e musicista.
+Nasce a Roma il 15 febbraio 1995.
+La sua attenzione nelle pratiche musicali passa dalla cibernetica alle tecnologie,
+e dagli spazi sonori e umani alla critica sociale.
+Si laurea in Economia, Finanza e Marketing nel 2015,
+ed inizia consecutivamente il suo programma accademico in Musica Elettronica
+presso il Conservatorio Santa Cecilia di Roma, come studente di Composizione Elettroacustica
+con i maestri Michelangelo Lupone e Nicola Bernardini, dove si diploma nel 2020.
+Attualmente è iscritto all'ultimo anno di biennio in Musica Elettronica 
+sempre nel Conservatorio Santa Cecilia di Roma.
+Ha scritto alcuni brani musicali per film come: 
+il film RAI "Aquadro", un film di Stefano Lodovichi del 2013,
+e from My House In Da House, un film di Giovanni La Gorga nel 2021.
+Nel 2017 presenta "Asteroidi" un'opera audiovisiva, con la classe di composizione multimediale di M.
+Riccardo Santoboni al Master in Sonic Arts (Università di Roma Tor Vergata)
+e presso l'Aula Magna del Conservatorio Santa Cecilia.
+Nel 2021 ha eseguito in concerto la parte elettronica del Post-prae-ludium n. 1 per Donau di Luigi
+Nono, al Goethe-Institut Italien di Roma, festival ArteScienza.
+E sempre nel 2021 esegue dal vivo l'LP pubblicato dalla Mossa Records nel medesimo anno
+(etichetta musicale indipendente di Musica Elettronica), presso il club Klang di Roma.
+Ha iniziato a fare musica da adolescente, come DJ Drum and Bass e produttore,
+essendo attivo e partecipando ad alcuni collettivi Drum and Bass a Roma (IT).
+Pubblica ancora diversi tipi di opere elettroniche sotto il moniker: Stigma.
+Le sue capacità, conoscenze ed interessi abbracciano ambiti quali:
+Computer Music e Computer Science (DSP),
+Matematica dei suoni, Acustica e Psicoacustica,
+Esperienze di base in ingegneria elettrica ed
+Ingegneria del suono, Composizione Multimediale,
+Storia della musica e Storia della musica elettroacustica,
+e tecniche compositive.
+    </p>
+  </div>
+</div>
+ 
   <!-- end of the BODY (COLOR) -->
   </body>
-  <!-- end the html page -->
-  </html>
+<!-- end the html page -->
+</html>
