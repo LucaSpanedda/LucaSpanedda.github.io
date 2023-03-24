@@ -1,52 +1,80 @@
+<!DOCTYPE HTML>
 <html>
+
 <head>
-<link href='https://fonts.googleapis.com/css?family=Michroma' rel='stylesheet'>
-<style>
-body {font-family: 'Michroma';font-size: 12px;}
-body {background-image: url('background.jpg');}
-</style>
+  <title>Luca_Spanedda_Website</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
 </head>
 
-<style>
-  a:link, a:visited 
-{
-  background-color: white;
-  color: black;
-  font-size: 20px;
-  padding: 2px 2px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px 2px;
-  cursor: pointer;
-}
-
-
-a:hover, a:active 
-{
-  background-color: LightGray;
-}
-
-.center {
-  text-align: center;
-  border: 1px solid white;
-}
-</style>
-<body >
-<body style = "text-align:center; text-transform:uppercase;" text = "white"><div style="white-space: pre">
-_______________________________________________________________________________________________________________________________________
-<h1><i>Luca Spanedda</i></h1>
-Welcome to my personal website.
-_______________________________________________________________________________________________________________________________________
-</div>
-<a href="biography/biography.html">- BIOGRAPHY -</a><br><br>
-<a href="social-links/sociallinks.html">- LINKS -</a><br><br>
-<a href="scores/0.00_scores_main.html">- SCORES -</a><br><br>
-<a href="diary/0.00_diary-writings_main.html">- DIARY/WRITINGS -</a><br><br>
-<a href="cv/CV-ENG.pdf">- CV -</a><br><br>
-<a href="portfolio/0_portfolio.pdf">- PORTFOLIO -</a><br><br>
-<a href="faustplugins/noise.html">- PLUGIN -</a><br><br>
-  <a href="webcount/webcount.html">- PLUGIN -</a><br><br>
-_______________________________________________________________________________________________________________________________________
-</div></body> 
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="index.html">Luca<span class="logo_colour">_Spanedda_Website</span></a></h1>
+          <h2>Welcome to my personal website.</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li class="selected"><a href="index.html">Home</a></li>
+          <li><a href="biography.html">Biography</a></li>
+          <li><a href="scores.html">Scores</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="cv/Luca_Spanedda_CV_eng.pdf">CV</a></li>
+          <li><a href="portfolio/Luca_Spanedda_portfolio_eng.pdf">Portfolio</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="apps.html">Apps</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+        <h3>Latest News</h3>
+        <h4>New Website Launched</h4>
+        <h5>March, 2023</h5>
+        <p>2023 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
+        <p></p>
+        <h3>Luca Spanedda Links</h3>
+        <ul>
+          <li><a href="https://conservatoriosantacecilia.academia.edu/LucaSpanedda">Academia</a></li>
+          <li><a href="https://github.com/LucaSpanedda/">Github</a></li>
+          <li><a href="https://soundcloud.com/luca-spanedda-1995">Soundcloud</a></li>
+          <li><a href="https://www.youtube.com/channel/UCRCkVPYRcgo84G8W_uJZuaw">Youtube</a></li>
+          <li><a href="https://www.instagram.com/luca_spanedda/">Instagram</a></li>
+        </ul>
+        <h3>Stigma Project Links</h3>
+        <ul>
+          <li><a href="https://stigma-audio.bandcamp.com/">Bandcamp</a></li>
+          <li><a href="https://www.facebook.com/stigmaudio/">Facebook</a></li>
+          <li><a href="https://soundcloud.com/official-stigma-audio">Soundcloud</a></li>
+          <li><a href="https://www.youtube.com/channel/UCS3DHDatyEDVnrHCz5yvaig/featured">Youtube</a></li>
+          <li><a href="https://www.instagram.com/stigmaudio/">Instagram</a></li>
+        </ul>
+        <h3>Search</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter keywords....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>"Humans are essentially temporal beings"</h1>
+        <p>Luca Spanedda is a Composer and Musician born in Rome on 15th February 1995.
+          His musical attention passes from cybernetics to technologies, and from sound and human spaces to social criticism.</p>
+      </div>
+    </div>
+    <div id="footer">
+      Copyright &copy; textured_stars | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">Simple web templates by HTML5</a>
+    </div>
+  </div>
+</body>
 </html>
