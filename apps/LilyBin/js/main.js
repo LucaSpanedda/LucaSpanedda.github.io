@@ -1,0 +1,338 @@
+require.config({
+  waitSeconds: 60,
+  shim: {
+    bootstrap: {
+      deps: ['jquery']
+    }
+  },
+  paths: {
+    jquery: 'https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.4.min',
+    bootstrap:
+      'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min',
+    CodeMirror: 'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0',
+    // CDNJS uses weird paths. Need this hack to allow loading CM addons
+    // which references a nonexistant "../../lib/codemirror".
+    'CodeMirror/lib/codemirror':
+      'https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.4.0/codemirror.min'
+  }
+});
+
+require([
+  'jquery',
+  'Preview',
+  'Editor',
+  'Clairnote_2_18',
+  'Clairnote_2_19',
+  'default_ly',
+  'bootstrap'
+], function(
+  $,
+  Preview,
+  Editor,
+  clairnoteLy_2_18,
+  clairnoteLy_2_19,
+  default_ly
+) {
+  $(function() {
+    var STAGE = 'https://7icpm9qr6a.execute-api.us-west-2.amazonaws.com/prod/';
+    var score = {
+      id: '',
+      code: default_ly,
+      version: 'unstable'
+    };
+    // var currentPage = window.location.pathname.slice(1);
+    // score.id = currentPage.split('/')[0] || '';
+
+    var capitalized = { unstable: 'Unstable', stable: 'Stable' };
+    $('#version_sel a').click(function() {
+      var state = this.dataset.version;
+      $('#version_btn')
+        .data('state', state)
+        .html(capitalized[state] + ' <span class="caret"></span>');
+      loadPreview();
+    });
+
+    // This never succeeds because we are on the wrong domain:
+    // "Cross-Origin Request Blocked"
+    //     $.get(
+    //       'https://s3-us-west-2.amazonaws.com/lilybin-tarballs/versions.json',
+    //       function (data) {
+    //         $('#version_sel a[data-version="stable"]').append(
+    //           ' (' + data.stable + ')'
+    //         );
+    //         $('#version_sel a[data-version="unstable"]').append(
+    //           ' (' + data.unstable + ')'
+    //         );
+    //       }
+    //     );
+    //
+    // So hard code the versions for now:
+    $('#version_sel a[data-version="stable"]').append(' (2.18.2)');
+    $('#version_sel a[data-version="unstable"]').append(' (2.19.55)');
+
+    function removeIncludes(str) {
+      return str.replace(/\\include/g, 'xxxxxxxx');
+    }
+
+    function removeCommentedIncludes(ly) {
+      var commentsRegex = /%{(?:.|\n)*?%}|%.*/g;
+      return ly.replace(commentsRegex, removeIncludes);
+    }
+
+    function includeClairnoteLy(ly, clairnoteLy) {
+      var noCommentedIncludes = removeCommentedIncludes(ly);
+      var regex = /\\include((?:.|\n)*?)\"clairnote\.ly\"/g;
+
+      var keepNewlines = function(clairnoteLy) {
+        return function(match, group) {
+          var newlines = group
+            .split('')
+            .filter(function(char) {
+              return char === '\n';
+            })
+            .join('');
+          return newlines + clairnoteLy;
+        };
+      };
+
+      return noCommentedIncludes.replace(regex, keepNewlines(clairnoteLy));
+    }
+
+    function loadPreview() {
+      var version = $('#version_btn').data('state');
+      var clairnoteLy =
+        version === 'unstable' ? clairnoteLy_2_19 : clairnoteLy_2_18;
+
+      preview.load(
+        {
+          code: includeClairnoteLy(editor.getValue(), clairnoteLy),
+          version: version
+        },
+        function(err, response) {
+          if (err) return;
+          $('#preview_button').attr('disabled', true);
+        }
+      );
+    }
+
+    /*
+    function save() {
+      score.code = editor.getValue();
+      score.version = $('#version_btn').data('state');
+      $.post('/save', score, function(response) {
+        window.history.pushState({}, '', '/' + response.id + '/' + response.revision);
+        score.id = response.id;
+        preview.id = response.id;
+        editor.spinner.hide();
+        preview.load(score, function (err, response) {
+          if (err) return;
+          $('#preview_button').attr('disabled', true);
+        });
+      }, 'json');
+    }
+    */
+
+    function changed() {
+      // Disable saving to LilyBin for now.
+      // $('#preview_button, #save_button').attr('disabled', false);
+      $('#preview_button').attr('disabled', false);
+    }
+
+    var editor = new Editor($('#code_container'));
+    editor.event.bind({
+      preview: loadPreview,
+      // 'save'   : save,
+      change: changed
+    });
+
+    // Disable saving to LilyBin for now.
+    // if (score.id) $('#save_button').attr('disabled', true);
+
+    var mainHeight = $(window).height() - $('#header').outerHeight();
+    var mainWidth = $(window).width();
+    // Corresponds with Bootstrap's xs
+    var xs = mainWidth < 768;
+
+    $('a.noop').click(function(e) {
+      e.preventDefault();
+    });
+
+    var preview = (window.p = new Preview($('#preview_container'), score.id));
+    preview.event.bind('scroll', function(e, lineInfo) {
+      // textedit:///path/to/file:1:2:3 <-- column
+      //                          ^ ^
+      //                          | +------ char
+      //                          +-------- line
+      // char   = number of character in this line **before** the
+      //          character that led to the note (key).
+      // column = 1 + 8 * (number of tabs before the key) +
+      //          (number of non-tab characters before the key)
+      //        = char + 1 + 7 * (number of tabs before the key)
+      var line = lineInfo.line;
+      var char = lineInfo.char;
+
+      editor.focus();
+      editor.scrollTo(line, char + 1);
+    });
+
+    var codeContainer = $(
+      '#code_container, .CodeMirror, .CodeMirror-gutters'
+    ).css({ height: (xs ? mainHeight * (5 / 12) : mainHeight) + 'px' });
+
+    var previewContainer = $('#preview_container').css({
+      height: (xs ? mainHeight * (7 / 12) : mainHeight) + 'px'
+    });
+
+    preview.resize();
+
+    var timer;
+    $(window).resize(function() {
+      if (timer) clearTimeout(timer);
+
+      timer = setTimeout(function() {
+        var mainHeight = $(window).height() - $('#header').outerHeight();
+        var mainWidth = $(window).width();
+        // Corresponds with Bootstrap's xs
+        var xs = mainWidth < 768;
+
+        codeContainer.css({
+          height: (xs ? mainHeight * (5 / 12) : mainHeight) + 'px'
+        });
+        previewContainer.css({
+          height: (xs ? mainHeight * (7 / 12) : mainHeight) + 'px'
+        });
+        preview.resize();
+      }, 200);
+    });
+
+    $('#preview_button').click(loadPreview);
+
+    // Disable saving to LilyBin for now.
+    // $('#save_button').click(editor.save.bind(editor));
+
+    $('#reset_button').click(editor.reset.bind(editor));
+    $('#undo_button').click(editor.undo.bind(editor));
+    $('#redo_button').click(editor.redo.bind(editor));
+
+    /* // Disable dropbox for now
+    $('#open_from_dropbox').click(function() {
+      Dropbox.choose({
+        success: function(files) {
+          var link = files[0].link;
+          editor.spinner.show();
+          $.get(link).done(function(code) {
+            score.code = code;
+            editor.openFile(code, !!code);
+          }).fail(function(err) {
+            var errorMessage = 'While fetching file from Dropbbox:\n\n';
+            if (err.responseJSON && err.responseJSON.err) {
+              errorMessage += err.responseJSON.err;
+            } else {
+              errorMessage += err.statusText;
+            }
+            preview.handleResponse({error: errorMessage});
+          }).always(function() {
+            editor.spinner.hide();
+          })
+        },
+        linkType: 'direct',
+        multiselect: false
+      });
+    });
+
+    $('#save_to_dropbox').click(function() {
+      editor.spinner.show();
+      $.post(STAGE + '/save_temp', JSON.stringify({
+        code: editor.getValue(),
+      }), function(response) {
+        editor.spinner.hide();
+        preview.error.hide();
+        if (!response.id) {
+          var errorMessage = 'Error while uploading score:\n\n' + JSON.stringify(response, null, 2);
+          preview.handleResponse({
+            error: errorMessage
+          });
+        }
+        var url = 'https://s3-us-west-2.amazonaws.com/lilybin-source-files/' + response.id + '.ly';
+        var $modal = $('#save_modal').modal('show');
+        $('#save_modal_ok').click(function(e) {
+          $(this).off('click');
+          $modal.modal('hide')
+          Dropbox.save(url, $('#file_name').val(), {
+            success: function() {},
+            error: function(errorMsg) {
+              preview.handleResponse({
+                error: 'Error while saving to Dropbox:\n' + errorMsg
+              });
+            }
+          });
+        });
+      }, 'json').fail(function(err) {
+        var errorMessage = 'Error while uploading score:\n\n';
+        if (err.responseJSON && err.responseJSON.err) {
+          errorMessage += err.responseJSON.err;
+        } else {
+          errorMessage += err.statusText;
+        }
+        preview.handleResponse({
+          error: errorMessage
+        });
+      });
+
+    });
+    */
+
+    // Don't get the current score from the server since we aren't saving
+    // anything and aren't running a server.
+    /*
+    $.get('/api/' + currentPage).done(function(data) {
+      score.version = data.version;
+      $('#version_btn').data('state', data.version);
+      $('#version_btn')
+        .html(capitalized[data.version] +
+          ' <span class="caret"></span>');
+
+      score.code    = data.code;
+      editor.openFile(data.code, !!data.code);
+    }).fail(function(err) {
+      var errorMessage;
+      if (err.responseJSON && err.responseJSON.err) {
+        errorMessage = err.responseJSON.err;
+      } else {
+        errorMessage = err.statusText;
+      }
+      preview.handleResponse({error: errorMessage});
+      $('#preview_button')     .off('click');
+      // Disable saving to LilyBin for now.
+      // $('#save_button')        .off('click');
+      $('#version_sel a')      .off('click');
+    })
+    */
+
+    // Instead just load the defaults.
+    // score.version = 'unstable';
+    // score.code = default_ly;
+
+    $('#version_btn').data('state', score.version);
+    $('#version_btn').html(
+      capitalized[score.version] + ' <span class="caret"></span>'
+    );
+
+    // second argument is whether to run LilyPond on the file
+    // editor.openFile(data.code, !!data.code);
+    editor.openFile(score.code, false);
+
+    // Tooltips are weird-behaving on touch screen devices.
+    // Simply disable them.
+    if (
+      window.innerWidth >= 992 ||
+      (!('ontouchstart' in window) &&
+        (!window.DocumentTouch || !(document instanceof DocumentTouch)))
+    ) {
+      $('[data-toggle="tooltip"]').tooltip({ html: true, placement: 'bottom' });
+    }
+
+    // Not saving, so no save modal.
+    // $('#save_modal').modal({show: false});
+  });
+});
