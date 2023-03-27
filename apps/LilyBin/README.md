@@ -1,28 +1,19 @@
-LilyBin
-=======
-
-[![Dependency status](https://img.shields.io/david/LilyBin/LilyBin.svg)](https://david-dm.org/LilyBin/LilyBin)
+# LilyBin-Clairnote
 
 LilyBin is a web-based [LilyPond](http://www.lilypond.org) editor. See it live
 at [http://lilybin.com](http://lilybin.com).
 
-Submit bugs and feature requests as GitHub issues.
+This is a version of LilyBin that supports
+[Clairnote music notation](clairnote.org).
 
-### Running LilyBin
+## Details
 
-Install [Node.js](https://nodejs.org/) and
-[Docker](https://docs.docker.com/installation/).
+Use the `clairnote-no-server` branch for the Clairnote version.
 
-Clone the repository and run `npm install` to download required node modules.
+Unlike the official LilyBin, we do not support saving files. That lets us treat
+the frontend as a static site rather than needing a node server. This works by
+deploying the contents of the `htdocs` directory.
 
-Run `docker pull trevordixon/lilypond` to fetch the Docker image containing the
-latest versions of LilyPond. (LilyBin uses Docker to compile scores in a
-sandboxed environment. It looks for a Docker image named `trevordixon/lilypond`
-and runs each compilation in a new container.)
-
-The Dockerfile used to build that image is located at
-[trevordixon/docker-lilypond](https://github.com/trevordixon/docker-lilypond).
-
-Launch LilyBin with `node server.js`. Navigate to
-[http://localhost:3001](http://localhost:3001), and you should be presented
-with an editor pane and a successfully rendered score.
+The official LilyBin has an old version of pdf.js as a submodule, but here
+the relevant files are just committed directly into `htdocs/pdfjs`.
+(Eventually this whole app could be redone.)

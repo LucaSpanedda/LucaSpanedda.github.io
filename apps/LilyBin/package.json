@@ -30,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/LilyBin/LilyBin/issues"
   },
-  "homepage": "https://github.com/LilyBin/LilyBin"
+  "homepage": "https://github.com/LilyBin/LilyBin",
+  "prettier": {
+     "trailingComma": "es5",
+    "singleQuote": true
+  }
 }
