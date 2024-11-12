@@ -14,30 +14,11 @@ Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit number
 
 Jekyll also offers powerful support for code snippets:
 
-
-```
-import("stdfaust.lib"); 
-  
-// signal input - output 
-//process = _;
-// ok
-```
-
 ```
 import("stdfaust.lib"); 
   
 // prova
 //process = _;
-// ok
-```
-
-```
-import("stdfaust.lib"); 
-  
-// signal input - output
-
-//process = _;
-
 // ok
 ```
 
