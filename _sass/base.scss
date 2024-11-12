@@ -66,3 +66,38 @@ input[type=submit] { font-size: $base-font-size;  font-family: $base-font-family
 input[type=submit]:hover { color: var(--background-color); background-color: var(--base-color); }
 *:focus { outline: none; }
 textarea { vertical-align: top; }
+
+/**
+ * Code Snippets
+ */
+pre, code {
+  background-color: #f5f5f5; /* Sfondo chiaro, tipico del markdown */
+  color: #333333;            /* Testo in grigio scuro uniforme */
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;          /* Aggiunge lo scroll per righe lunghe */
+}
+
+/* Disattiva i colori variabili della sintassi */
+pre, code, pre code {
+  --code-color-1: inherit;
+  --code-color-2: inherit;
+  --code-color-3: inherit;
+  --code-color-4: inherit;
+  --code-color-5: inherit;
+  --code-color-6: inherit;
+  --code-color-7: inherit;
+  --code-color-8: inherit;
+  --code-color-9: inherit;
+  --code-color-10: inherit;
+  --code-color-11: inherit;
+  --code-color-12: inherit;
+  --code-color-13: inherit;
+  --code-color-14: inherit;
+  --code-color-15: inherit;
+  --code-color-16: inherit;
+  --code-color-17: inherit;
+  --code-color-18: inherit;
+}
