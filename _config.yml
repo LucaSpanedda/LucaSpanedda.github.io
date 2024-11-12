@@ -11,5 +11,8 @@
 #style: light # dark (default) or light
 #listen_for_clients_preferred_style: true # true or false (default)
 
+domain: lucaspanedda.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
+url: lucaspanedda.github.io  # the base hostname and protocol for your site, e.g. http://example.com
+
 plugins:
   - jekyll-seo-tag
