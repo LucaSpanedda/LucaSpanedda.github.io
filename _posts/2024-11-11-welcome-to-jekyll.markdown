@@ -26,6 +26,14 @@ import("stdfaust.lib");
 ```
 import("stdfaust.lib"); 
   
+// prova
+//process = _;
+// ok
+```
+
+```
+import("stdfaust.lib"); 
+  
 // signal input - output
 
 //process = _;
@@ -34,8 +42,6 @@ import("stdfaust.lib");
 ```
 
 ![Alt text](/src/images/about-this-filters-business/apf.svg)
-
-![pole](https://github.com/user-attachments/assets/3ab076de-ec80-40e5-a311-0a8deb6f7eb9)
 
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
