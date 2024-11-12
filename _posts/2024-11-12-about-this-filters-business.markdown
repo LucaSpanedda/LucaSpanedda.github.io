@@ -2,7 +2,7 @@
 layout: post
 title:  "About this filters business"
 date:   2024-11-12 17:10:18 +0100
-categories: jekyll update
+categories: blog
 ---
 
 # Digital Filters in Faust
