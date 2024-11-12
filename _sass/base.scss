@@ -83,11 +83,29 @@ pre, code {
   margin-bottom: 15px;       /* Aggiungi un po' di spazio alla fine */
 }
 
+/**
+ * Code Snippets
+ */
+pre, code {
+  background-color: #f5f5f5; /* Sfondo chiaro, tipico del markdown */
+  color: #333333;            /* Testo in grigio scuro uniforme */
+  font-family: 'Source Code Pro', monospace;
+  font-size: 8px;
+  padding: 10px;             /* Aumento leggero del padding per migliorare l'area di lettura */
+  border-radius: 2px;
+  overflow-x: auto;          /* Aggiunge lo scroll per righe lunghe */
+  line-height: 1.6;          /* Aumenta l'altezza di riga per migliorare la leggibilità */
+  white-space: pre-wrap;     /* Consente di rispettare gli a capo */
+  margin-bottom: 20px;       /* Aggiungi spazio tra i blocchi di codice */
+  word-wrap: break-word;     /* Evita che le parole si estendano oltre i margini */
+}
+
 /* Stile per il codice inline */
 code {
   padding: 2px 4px;          /* Piccolo padding per il codice inline */
   background-color: #e0e0e0; /* Leggero contrasto per il codice inline */
   border-radius: 3px;
+  line-height: normal;       /* Disabilita il line-height specifico per i tag inline */
 }
 
 /* Disattiva i colori variabili della sintassi */
