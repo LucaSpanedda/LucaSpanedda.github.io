@@ -4,5 +4,11 @@ layout: page
 permalink: /contact
 ---
 
-# Get in touch?
-email: lucaspanedda1995@gmail.com
+<html>
+<head>
+    <meta http-equiv="refresh" content="0; url=mailto:lucaspanedda1995@gmail.com" />
+</head>
+<body>
+    <p>If you are not redirected automatically, <a href="mailto:lucaspanedda1995@gmail.com">click here to send an email</a>.</p>
+</body>
+</html>
