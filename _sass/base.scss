@@ -106,7 +106,7 @@ code {
   border-radius: 2px;
 }
 
-/* Disattiva i colori variabili della sintassi */
+/* Disattiva i colori variabili della sintassi in Code Snippets */
 pre, code, pre code {
   --code-color-1: inherit;
   --code-color-2: inherit;
@@ -126,4 +126,9 @@ pre, code, pre code {
   --code-color-16: inherit;
   --code-color-17: inherit;
   --code-color-18: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
