@@ -78,8 +78,16 @@ pre, code {
   padding: 8px;
   border-radius: 2px;
   overflow-x: auto;          /* Aggiunge lo scroll per righe lunghe */
-  line-height: 1.2;          /* Imposta un'altezza di riga maggiore per evitare sovrapposizioni */
+  line-height: 1.6;          /* Aumenta l'altezza di riga per migliorare la leggibilità */
   white-space: pre-wrap;     /* Consente di rispettare gli a capo */
+  margin-bottom: 15px;       /* Aggiungi un po' di spazio alla fine */
+}
+
+/* Stile per il codice inline */
+code {
+  padding: 2px 4px;          /* Piccolo padding per il codice inline */
+  background-color: #e0e0e0; /* Leggero contrasto per il codice inline */
+  border-radius: 3px;
 }
 
 /* Disattiva i colori variabili della sintassi */
