@@ -14,7 +14,14 @@ categories: jekyll update
 In FAUST the ```_``` represent a signal input.
 A function with one input that goes directly to the output is written as follows: 
 
-https://github.com/LucaSpanedda/Digital_Filters_in_Faust/blob/c25f64f7c165c10aa0ca5c4e0edea73a7aedd898/src/examples.lib#L4-L8
+```
+ import("stdfaust.lib"); 
+  
+  
+ // signal input - output 
+ //process = _; 
+ ```
+
 ![https://github.com/LucaSpanedda/Digital_Filters_in_Faust/blob/main/docs/signal.svg](docs/signal.svg)
 
 ---
