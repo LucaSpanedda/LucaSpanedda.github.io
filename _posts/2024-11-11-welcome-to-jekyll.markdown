@@ -1,4 +1,4 @@
----
+![signal](https://github.com/user-attachments/assets/3beba070-b3d2-46c3-b5fd-c4d22e213e3f)---
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2024-11-11 17:10:18 +0100
@@ -29,7 +29,28 @@ import("stdfaust.lib");
 //process = _; 
 </code> </pre>
 
-![Alt text](https://github.com/LucaSpanedda/Digital_Filters_in_Faust/blob/main/docs/del196000.svg)
+![Upload<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 56.000000 48.000000" width="28.000000mm" height="24.000000mm" version="1.1">
+<rect x="0.000000" y="0.000000" width="55.000000" height="47.000000" rx="0" ry="0" style="stroke:#000000;fill:#FFFFFF;"/>
+<text x="10.000000" y="7.000000" font-family="Verdana" font-size="7"></text>
+<line x1="15.000000" y1="15.000000" x2="15.000000" y2="33.000000"  style="stroke: black; stroke-linecap:round; stroke-width:0.25; stroke-dasharray:3,3;"/>
+<line x1="15.000000" y1="33.000000" x2="41.000000" y2="33.000000"  style="stroke: black; stroke-linecap:round; stroke-width:0.25; stroke-dasharray:3,3;"/>
+<line x1="41.000000" y1="33.000000" x2="41.000000" y2="15.000000"  style="stroke: black; stroke-linecap:round; stroke-width:0.25; stroke-dasharray:3,3;"/>
+<line x1="15.000000" y1="15.000000" x2="20.000000" y2="15.000000"  style="stroke: black; stroke-linecap:round; stroke-width:0.25; stroke-dasharray:3,3;"/>
+<line x1="41.000000" y1="15.000000" x2="41.000000" y2="15.000000"  style="stroke: black; stroke-linecap:round; stroke-width:0.25; stroke-dasharray:3,3;"/>
+<text x="20.000000" y="17.000000" font-family="Verdana" font-size="7">process</text>
+<line x1="43.000000" y1="23.000000" x2="46.000000" y2="24.000000"  transform="rotate(0.000000,46.000000,24.000000)" style="stroke: black; stroke-width:0.25;"/>
+<line x1="43.000000" y1="25.000000" x2="46.000000" y2="24.000000"  transform="rotate(0.000000,46.000000,24.000000)" style="stroke: black; stroke-width:0.25;"/>
+<line x1="10.000000" y1="24.000000" x2="20.000000" y2="24.000000"  style="stroke:black; stroke-linecap:round; stroke-width:0.25;"/>
+<line x1="20.000000" y1="24.000000" x2="24.000000" y2="24.000000"  style="stroke:black; stroke-linecap:round; stroke-width:0.25;"/>
+<line x1="24.000000" y1="24.000000" x2="28.000000" y2="24.000000"  style="stroke:black; stroke-linecap:round; stroke-width:0.25;"/>
+<line x1="28.000000" y1="24.000000" x2="28.000000" y2="24.000000"  style="stroke:black; stroke-linecap:round; stroke-width:0.25;"/>
+<line x1="28.000000" y1="24.000000" x2="32.000000" y2="24.000000"  style="stroke:black; stroke-linecap:round; stroke-width:0.25;"/>
+<line x1="32.000000" y1="24.000000" x2="36.000000" y2="24.000000"  style="stroke:black; stroke-linecap:round; stroke-width:0.25;"/>
+<line x1="36.000000" y1="24.000000" x2="46.000000" y2="24.000000"  style="stroke:black; stroke-linecap:round; stroke-width:0.25;"/>
+</svg>
+ing signal.svg…]()
+
 
 ![Alt text](/src/images/about-this-filters-business/apf.svg)
 
