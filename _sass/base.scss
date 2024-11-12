@@ -98,6 +98,7 @@ pre, code {
   white-space: pre-wrap;     /* Consente di rispettare gli a capo */
   margin-bottom: 20px;       /* Aggiungi spazio tra i blocchi di codice */
   word-wrap: break-word;     /* Evita che le parole si estendano oltre i margini */
+  text-decoration: none;     /* Rimuove eventuali sottolineature */
 }
 
 /* Stile per il codice inline */
@@ -106,6 +107,7 @@ code {
   background-color: #e0e0e0; /* Leggero contrasto per il codice inline */
   border-radius: 3px;
   line-height: normal;       /* Disabilita il line-height specifico per i tag inline */
+  text-decoration: none;     /* Rimuove sottolineature per il codice inline */
 }
 
 /* Disattiva i colori variabili della sintassi */
