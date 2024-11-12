@@ -22,14 +22,14 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
-Faust 
-
-```
+<pre> <code>
 import("stdfaust.lib"); 
   
 // signal input - output 
 //process = _; 
-```
+</code> </pre>
+
+![Alt text](https://github.com/LucaSpanedda/Digital_Filters_in_Faust/blob/main/docs/del196000.svg)
 
 ![Alt text](/src/images/about-this-filters-business/apf.svg)
 
