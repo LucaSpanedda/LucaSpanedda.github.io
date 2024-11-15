@@ -5,3 +5,4 @@ gemspec
 
 
 gem 'jekyll-seo-tag'
+gem 'kramdown-math-katex'
